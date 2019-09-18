@@ -27,15 +27,24 @@ button.on("click", function() {
 
 
     // remove any children from the table
-    result_table.html("");
-  
-    // append data to the table
-    result_table.append("td").text(`${sighting_date}`);
-    result_table.append("td").text(`${sighting_city}`);
-    result_table.append("td").text(`${sighting_state}`);
-    result_table.append("td").text(`${sighting_country}`);
-    result_table.append("td").text(`${sighting_shape}`);
-    result_table.append("td").text(`${sighting_comment}`);
+    //result_table.html("");
+
+    for(var loopCount=0; loopCount < tableData.length; loopCount++){
+    
+        var sighting_row = tableData[loopCount]
+         
+        // append data to the table
+        result_table.append("tr")
+        result_table.append("td").text(`${sighting_date}`);
+        result_table.append("td").text(`${sighting_city}`);
+        result_table.append("td").text(`${sighting_state}`);
+        result_table.append("td").text(`${sighting_country}`);
+        result_table.append("td").text(`${sighting_shape}`);
+        result_table.append("td").text(`${sighting_comment}`);
+
+    }
+
+
 
 
 });
